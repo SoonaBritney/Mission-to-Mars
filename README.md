@@ -21,6 +21,7 @@ Results:
 1). Deliverable 1: 
 Mission_to_Mars_Challenge.ipynb
 
+Titles and images:
 [{'title': 'Cerberus Hemisphere Enhanced',
   'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg'},
  {'title': 'Schiaparelli Hemisphere Enhanced',
@@ -38,6 +39,7 @@ app.py
 3). Deliverable 3: 
 index.html
 
+We added the bootstrap Bootstrap grid examples to be responsive for mobile ipad display.
 
 3.Conclusion
 Web scraping is very powerful method to scrap the content and recreate a web site & pages dynamically. BeautifulSoup and Splinter are very helpful tool  as well as Chrome dev tool. To do this, we use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemispheres and the titles of those images, store the scraped data on a Mongo database, use a web application to display the data, and alter the design of the web app to accommodate these images.
