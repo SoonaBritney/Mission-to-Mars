@@ -20,7 +20,9 @@ For this part of the Challenge, I updated the web app to make it mobile-responsi
 Results:
 1). Deliverable 1: 
 Mission_to_Mars_Challenge.ipynb
+https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb
 
+- full resolution image and title for each each hemisphere image
 Titles and images:
 [{'title': 'Cerberus Hemisphere Enhanced',
   'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg'},
