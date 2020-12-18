@@ -19,6 +19,8 @@ Use Bootstrap components to polish and customize the portfolio.
 - Data Source: NASA news website, Mars Hemispheres website, getbootstrap website
 - Software: BeautifulSoup, Splinter, MongoDB, Flask, Python, Jupyter notebook
 
+![scrapping tools & data flow](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/scrapping_tools.png)
+
 ## 2. Summary
 
 (1). Deliverable 1: Scrape Full-Resolution Mars Hemisphere Images and Titles
