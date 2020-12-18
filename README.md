@@ -33,8 +33,7 @@ For this part of the Challenge, I updated the web app to make it mobile-responsi
 
 ## 3.Results:
 1). Deliverable 1: 
-Mission_to_Mars_Challenge.ipynb
-https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb
+![Mission_to_Mars_Challenge.ipynb](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb)
 
 - full resolution image and title for each each hemisphere image
 ![screenshot - title and images](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_hemisphere_image_title_path.PNG) 
