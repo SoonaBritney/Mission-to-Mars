@@ -22,6 +22,7 @@ Use Bootstrap components to polish and customize the portfolio.
 ![scrapping tools & data flow](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/scrapping_tools.png)
 
 ## 2. Summary
+In this module, we automated a web browser to visit the NASA news website and the Mars Hemispheres website to extract data about the Mission to Mars in index.html. We stored it in a Mongo DB, NoSQL database in scraping.py, and then render the data in a web application created with Flask in app.py.
 
 (1). Deliverable 1: Scrape Full-Resolution Mars Hemisphere Images and Titles
 In this chellenge, using BeautifulSoup and Splinter, I scraped full-resolution images of Mars’s hemispheres and the titles of those images.
