@@ -33,6 +33,8 @@ Titles and images:
  {'title': 'Valles Marineris Hemisphere Enhanced',
   'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg'}]
 
+![screenshot](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_hemisphere_image_title_path.PNG) 
+
 2). Deliverable 2: 
 scraping.py
 index.html
