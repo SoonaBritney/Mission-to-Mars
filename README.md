@@ -23,17 +23,7 @@ Mission_to_Mars_Challenge.ipynb
 https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb
 
 - full resolution image and title for each each hemisphere image
-Titles and images:
-[{'title': 'Cerberus Hemisphere Enhanced',
-  'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg'},
- {'title': 'Schiaparelli Hemisphere Enhanced',
-  'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg'},
- {'title': 'Syrtis Major Hemisphere Enhanced',
-  'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg'},
- {'title': 'Valles Marineris Hemisphere Enhanced',
-  'img_url': 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg'}]
-
-![screenshot](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_hemisphere_image_title_path.PNG) 
+![screenshot - title and images](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_hemisphere_image_title_path.PNG) 
 
 2). Deliverable 2: 
 scraping.py
