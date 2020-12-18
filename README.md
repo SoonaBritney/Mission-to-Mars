@@ -7,6 +7,20 @@ https://github.com/SoonaBritney/Mission-to-Mars
 
 ## 1. Objectives
 
+By the end of this module, we will be able to:
+
+Gain familiarity with and use HTML elements, as well as class and id attributes, to identify content for web scraping.
+Use BeautifulSoup and Splinter to automate a web browser and perform a web scrape.
+Create a MongoDB database to store data from the web scrape.
+Create a web application with Flask to display the data from the web scrape.
+Create an HTML/CSS portfolio to showcase projects.
+Use Bootstrap components to polish and customize the portfolio.
+
+- Data Source: NASA news website, Mars Hemispheres website, getbootstrap website
+- Software: BeautifulSoup, Splinter, MongoDB, Flask, Python, Jupyter notebook
+
+## 2. Summary
+
 (1). Deliverable 1: Scrape Full-Resolution Mars Hemisphere Images and Titles
 In this chellenge, using BeautifulSoup and Splinter, I scraped full-resolution images of Mars’s hemispheres and the titles of those images.
 
@@ -17,7 +31,7 @@ Using the Python and HTML skills, I added the code you created in Deliverable 1 
 For this part of the Challenge, I updated the web app to make it mobile-responsive, and add two additional Bootstrap 3 components to make it stand out.
 
 
-## 2.Results:
+## 3.Results:
 1). Deliverable 1: 
 Mission_to_Mars_Challenge.ipynb
 https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb
@@ -35,7 +49,7 @@ index.html
 
 We added the bootstrap Bootstrap grid examples to be responsive for mobile ipad display.
 
-## 3.Conclusion
+## 4.Conclusion
 Web scraping is very powerful method to scrap the content and recreate a web site & pages dynamically. BeautifulSoup and Splinter are very helpful tool  as well as Chrome dev tool. To do this, we use BeautifulSoup and Splinter to scrape full-resolution images of Mars’s hemispheres and the titles of those images, store the scraped data on a Mongo database, use a web application to display the data, and alter the design of the web app to accommodate these images.
 
 
