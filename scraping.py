@@ -1,115 +1,206 @@
-from splinter import Browser
-from bs4 import BeautifulSoup as bs
+# Import Dependencies
 import pandas as pd
+import datetime as dt
+from datetime import datetime
+# Import Splinter and BeautifulSoup
+from splinter import Browser
+from bs4 import BeautifulSoup
+
+def scrape_all():
+    # Initiate headless driver for deployment
+    browser = Browser("chrome", executable_path="chromedriver", headless=True)
+
+    news_title, news_paragraph = mars_news(browser)
+    # Run all scraping functions and store results in dictionary
+    data = {
+        "news_title": news_title,
+        "news_paragraph": news_paragraph,
+        "featured_image": featured_image(browser),
+        "cerberus_images": cerberus_images(browser),
+        "schiaparelli_images": schiaparelli_images(browser),
+        "syrtis_images": syrtis_images(browser),
+        "valles_images": valles_images(browser),
+        "facts": mars_facts(),
+        "last_modified": dt.datetime.now()
+        }
+    return data
+
+def mars_news(browser):
+    # Featured Article 
+    # Visit the mars nasa news site
+    url = 'https://mars.nasa.gov/news/'
+    browser.visit(url)
+    # Optional delay for loading the page
+    browser.is_element_present_by_css("ul.item_list li.slide", wait_time=1)
+    # Set up the HTML parser:
+    html = browser.html
+    news_soup = BeautifulSoup(html, 'html.parser')
+    # Add try/except for error handling
+    try:
+        slide_elem = news_soup.select_one('ul.item_list li.slide')
+        # Chain .find onto our previously assigned variable, "slide_elem."
+        slide_elem.find("div", class_='content_title')
+        # Use the parent element to find the first `a` tag and save it as `news_title`
+        news_title = slide_elem.find("div", class_='content_title').get_text()
+        # Use the parent element to find the paragraph text
+        news_p = slide_elem.find('div', class_="article_teaser_body").get_text()
+        
+    except AttributeError:
+        return None, None
+    return news_title, news_p
+
+def featured_image(browser):
+    # Mars Images
+    # # Visit URL
+    url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
+    browser.visit(url)
+    # Find and click the full image button
+    full_image_elem = browser.find_by_id('full_image')
+    full_image_elem.click()
+    # Find the more info button and click that
+    browser.is_element_present_by_text('more info', wait_time=1)
+    more_info_elem = browser.find_link_by_partial_text('more info')
+    more_info_elem.click()
+    # Parse the resulting html with soup
+    html = browser.html
+    img_soup = BeautifulSoup(html, 'html.parser')
+    try:
+        # Find the relative image url
+        img_url_rel = img_soup.select_one('figure.lede a img').get("src")
+        
+    except AttributeError:
+        return None
+    # Use the base URL to create an absolute URL
+    img_url = f'https://www.jpl.nasa.gov{img_url_rel}'
+    
+    return img_url
+    
 
 
-def init_browser():
-    # @NOTE: Replace the path with your actual path to the chromedriver
-     executable_path = {'executable_path': 'chromedriver.exe'}
-     browser = Browser('chrome', **executable_path, headless=False)
-     return browser
 
-mars_data= {}
-def mars_news_scrape():
-     browser = init_browser()
-    #Visit Nasa News url  using splinter module
+def cerberus_images(browser):
+    # Mars Image URLs
+    # Visit URL
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+    # Find and click the hemisphere link button
+    image_elem = browser.find_by_css('a.product-item h3')
+    image_elem.click()
+    # Parse the resulting html with soup
+    html = browser.html
+    img_soup = BeautifulSoup(html, 'html.parser')
+    # Find the title
+    title_elem= img_soup.find("h2", class_="title").get_text()
+    title_elem
+    # Find the sample button and click
+    sample_elem= browser.find_by_text('Sample')
+    sample_elem.click()
+    try:
+        # Find the relative image url
+        img_url_rel = img_soup.find_all('img')[4]["src"]
+    except AttributeError:
+        return None
+    # Use the base URL to create an absolute URL
+    img_url = f'https://astrogeology.usgs.gov{img_url_rel}'
+    
+    return img_url
 
-     Nasa_url = 'https://mars.nasa.gov/news/'
-     browser.visit(Nasa_url)
-     #create HTMl Object
-     html = browser.html
-     #parse HTML with beautiful soup
-     Nasa_soup = bs(html, 'html.parser')
+def schiaparelli_images(browser):
+    # Mars Image URLs
+    # Visit URL
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+    # Find and click the hemisphere link button
+    image_elem = browser.find_by_css('a.product-item h3')
+    image_elem.click()
+    # Parse the resulting html with soup
+    html = browser.html
+    img_soup = BeautifulSoup(html, 'html.parser')
+    # Find the title
+    title_elem= img_soup.find("h2", class_="title").get_text()
+    title_elem
+    # Find the sample button and click
+    sample_elem= browser.find_by_text('Sample')
+    sample_elem.click()
+    try:
+        # Find the relative image url
+        img_url_rel = img_soup.find_all('img')[10]["src"]
+    except AttributeError:
+        return None
+    # Use the base URL to create an absolute URL
+    img_url = f'https://astrogeology.usgs.gov{img_url_rel}'
+    
+    return img_url
 
-     # Extract title text
-     nasa_news_title = Nasa_soup.find('div',class_='content_title').find('a').text
-     print(f"title {nasa_news_title}")
-     mars_data['nasa_news_title']=nasa_news_title
-     # Extract Paragraph text
-     nasa_news_paragraph=Nasa_soup.find('div',class_='article_teaser_body').text
-     mars_data['nasa_news_paragraph'] = nasa_news_paragraph
-     #print(nasa_news_paragraph)
-     print(f"paragraph {nasa_news_paragraph}")
+def syrtis_images(browser):
+    # Mars Image URLs
+    # Visit URL
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+    # Find and click the hemisphere link button
+    image_elem = browser.find_by_css('a.product-item h3')
+    image_elem.click()
+    # Parse the resulting html with soup
+    html = browser.html
+    img_soup = BeautifulSoup(html, 'html.parser')
+    # Find the title
+    title_elem= img_soup.find("h2", class_="title").get_text()
+    title_elem
+    # Find the sample button and click
+    sample_elem= browser.find_by_text('Sample')
+    sample_elem.click()
+    try:
+        # Find the relative image url
+        img_url_rel = img_soup.find_all('img')[9]["src"]
+    except AttributeError:
+        return None
+    # Use the base URL to create an absolute URL
+    img_url = f'https://astrogeology.usgs.gov{img_url_rel}'
+    
+    return img_url
 
-     return mars_data
-     
-def img_scrape():
-     browser = init_browser()
-     #Visit Nasa's JPL Mars Space url  using splinter module
-     jplNasa_url='https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
-     browser.visit(jplNasa_url)
-     #create HTML object
-     html = browser.html
-     soup = bs(html, 'html.parser')
-
-     #get base Nasa link
-     main_url ='https://www.jpl.nasa.gov'
-     #get image url from the soup object.
-     featured_image_url = soup.find('article')['style'].replace('background-image: url(','').replace(');', '')[1:-1]
-
-     #Create one full image url link
-     full_image_url=main_url+featured_image_url
-     mars_data['full_image_url']= full_image_url
-     print(full_image_url )     
-
-     return mars_data
-
-
-def mars_weather():
-     browser = init_browser()
-     #Visit the Mars Weather twitter account
-     Tweet_url='https://twitter.com/marswxreport?lang=en'
-     # Retrieve page with the requests module
-     browser.visit(Tweet_url)
-     #create HTML object
-     html=browser.html
-     twit_soup=bs(html,'html.parser')
-
-     # Extract title text
-     mars_data['mars_weather'] = twit_soup.find('p',class_='TweetTextSize').text
-     #print('mars_weather = '+ mars_weather.text)
-     return mars_data
-
+def valles_images(browser):
+    # Mars Image URLs
+    # Visit URL
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+    # Find and click the hemisphere link button
+    image_elem = browser.find_by_css('a.product-item h3')
+    image_elem.click()
+    # Parse the resulting html with soup
+    html = browser.html
+    img_soup = BeautifulSoup(html, 'html.parser')
+    # Find the title
+    title_elem= img_soup.find("h2", class_="title").get_text()
+    title_elem
+    # Find the sample button and click
+    sample_elem= browser.find_by_text('Sample')
+    sample_elem.click()
+    try:
+        # Find the relative image url
+        img_url_rel = img_soup.find_all('img')[7]["src"]
+    except AttributeError:
+        return None
+    # Use the base URL to create an absolute URL
+    img_url = f'https://astrogeology.usgs.gov{img_url_rel}'
+    
+    return img_url
+    
+    
 def mars_facts():
-     # Visit the Mars Facts webpage
-     mars_facts_url='https://space-facts.com/mars/'
-     mars_fact_table=pd.read_html(mars_facts_url)
+    # Add try/except for error handling
+    try:
+        # Use 'read_html' to scrape the facts table into a dataframe
+        df = pd.read_html('http://space-facts.com/mars/')[0]
 
-     #Create Dataframe to store table data
-     df = mars_fact_table[0]
-     df.columns = ['Mars-Earth Comparison', 'Mars', 'Earth']
-     mars_facts = df.to_html()
-     mars_data['mars_facts'] = mars_facts
-     return mars_data
-
-
-def mars_hem():
-
-     browser = init_browser()
-     # Visit the Mars Facts webpage
-    # Visit the USGS Astrogeology site
-     USGS_url="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
-     short_url="https://astrogeology.usgs.gov"
-
-     browser.visit(USGS_url)
-     html = browser.html
-     soup = bs(html, 'html.parser')
-     main_url = soup.find_all('div', class_='item')
-     
-     hemisphere_img_urls=[]      
-     for x in main_url:
-          title = x.find('h3').text
-          url = x.find('a')['href']
-          hem_img_url= short_url+url
-          #print(hem_img_url)
-          browser.visit(hem_img_url)
-          html = browser.html
-          soup = bs(html, 'html.parser')
-          hemisphere_img_original= soup.find('div',class_='downloads')
-          hemisphere_img_url=hemisphere_img_original.find('a')['href']
-          
-          print(hemisphere_img_url)
-          img_data=dict({'title':title, 'img_url':hemisphere_img_url})
-          hemisphere_img_urls.append(img_data)
-     mars_data['hemisphere_img_urls']=hemisphere_img_urls
-     return mars_data
+    except BaseException:
+        return None
+    # Assign columns and set index of dataframe
+    df.columns=['Description', 'Mars']
+    df.set_index('Description', inplace=True)
+    # Convert dataframe into HTML format, add bootstrap
+    return df.to_html()
+    
+if __name__ == "__main__":
+        # If running as script, print scraped data
+        print(scrape_all())
