@@ -54,11 +54,26 @@ To run the code, we need to install many components prior to the scrapping.
 scraping.py
 index.html
 app.py
-- Step 1: On the visual studio, run the code
-![commnad line](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_commandline_VS.PNG) 
+-Step 0: After the  connect to Mongo DB, 
+-Step 1: On the visual studio, run the code
+- ![commnad line](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_commandline_VS.PNG) 
+
+-Step2: The scrapping is successfuly done on the local host
+- ![scrape sucessful](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapping_successful.PNG)
+
+- Step3: Now the screen shows the scrapped web site
+- ![screen1](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapped_result3.PNG)
+- ![screen2](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapped_result4.PNG)
+
+- Step3: If you see the mango DB, you can see the DB size is also increaed with the scrapped content data
+- ![After scrap - Mango DB size is increased](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_mongo_scrapped3.PNG)
+
 
 3). Deliverable 3: 
 index.html
+- The page is using the bootstrap css style and it is responsive for mobile app.
+- ![bootstrap view](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapped_result5.PNG) 
+- ![mobile app responsive view](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapped_responsive.PNG) 
 
 We added the bootstrap Bootstrap grid examples to be responsive for mobile ipad display.
 
