@@ -35,6 +35,15 @@ For this part of the Challenge, I updated the web app to make it mobile-responsi
 
 
 ## 3.Results:
+To run the code, we need to install many components prior to the scrapping.
+- Mango DB
+- pip install html5lib
+- pip install lxml
+- pip install numpy 
+- python -m pip install pymongo
+- pip install flask
+- pip install splinter
+
 1). Deliverable 1: 
 [Mission_to_Mars_Challenge.ipynb](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb)
 
