@@ -54,6 +54,8 @@ To run the code, we need to install many components prior to the scrapping.
 scraping.py
 index.html
 app.py
+- Step 1: On the visual studio, run the code
+![commnad line](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_commandline_VS.PNG) 
 
 3). Deliverable 3: 
 index.html
