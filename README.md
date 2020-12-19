@@ -65,7 +65,7 @@ app.py
 - ![screen1](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapped_result3.PNG)
 - ![screen2](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_scrapped_result4.PNG)
 
-- Step3: If you see the mango DB, you can see the DB size is also increaed with the scrapped content data
+- Step3: If you see the mango DB, you can see the DB size is also increaed with the scrapped content data. I used the "mars" DataBase in the Mango DB.
 - ![After scrap - Mango DB size is increased](https://github.com/SoonaBritney/Mission-to-Mars/blob/main/Capture_mongo_scrapped3.PNG)
 
 
